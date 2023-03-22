@@ -6,6 +6,7 @@ import { gearbox } from './sources/gearbox';
 import { overnight } from './sources/overnight';
 import { reaper } from './sources/reaper';
 import { tessera } from './sources/tessera';
+import { tetu } from './sources/tetu';
 import { euler } from './sources/euler';
 import { defaultFetch } from './sources/default';
 
@@ -35,6 +36,7 @@ const tokens = [
   { name: 'ankr',      fetchFn: ankr },
   { name: 'reaper',    fetchFn: reaper },
   { name: 'tessera',   fetchFn: tessera },
+  { name: 'tetu',      fetchFn: tetu },
   // { name: 'euler',     fetchFn: euler },
   { name: 'stEth',     fetchFn: () => defaultFetch({ tokens: ['0xae7ab96520de3a18e5e111b5eaab095312d7fe84', '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0', '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd', '0x5979d7b546e38e414f7e9822514be443a4800529'], url: 'https://eth-api.lido.fi/v1/protocol/steth/apr/sma', path: 'data.smaApr' }) },
   { name: 'stMatic',   fetchFn: () => defaultFetch({ tokens: ['0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4'], url: 'https://polygon.lido.fi/api/stats', path: 'apr' }) },
@@ -46,6 +48,8 @@ const tokens = [
   { name: 'maticX',    fetchFn: () => defaultFetch({ tokens: ['0xfa68fb4628dff1028cfec22b4162fccd0d45efb6'], url: 'https://universe.staderlabs.com/polygon/apy', path: 'value' }) },
 ]
 
+const names = tokens.map((t) => t.name)
+
 export default {
   async fetch(
     request: Request,
@@ -56,7 +60,7 @@ export default {
     const url = new URL(request.url)
     const path = url.pathname.slice(1)
 
-    if (path) {
+    if (path && names.includes(path)) {
       const token = tokens.find((t) => t.name === path)
       if (token) {
         const aprs = await token.fetchFn()
