@@ -1,5 +1,6 @@
 name = "yield-tokens"
 main = "src/index.ts"
+account_id = "a017849c0d688ba8b58ef17e610c5c9a"
 compatibility_date = "2023-03-17"
 
 kv_namespaces = [
