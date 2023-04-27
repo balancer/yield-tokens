@@ -58,9 +58,9 @@ defaultFetch({
 }
 ```
 
-If the token yield is exposed in a different format, you may need to implement custom fetching logic.
+In case the token yield is exposed in a different format, you may need to implement custom fetching logic.
 
-The fetching function must handle a request and return the APR in an object:
+The fetching function must handle a request and return the APR as an object:
 
 ```ts
 { [address: string]: number }
