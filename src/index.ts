@@ -38,7 +38,7 @@ const tokens = [
   { name: 'stafi',   fetchFn: () => defaultFetch({ tokens: ['0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593'], url: 'https://drop-api.stafi.io/reth/v1/poolData', path: 'data.stakeApr' }) },
   { name: 'usdr',    fetchFn: () => defaultFetch({ tokens: ['0xaf0d9d65fc54de245cda37af3d18cbec860a4d4b'], url: 'http://usdr-api.us-east-1.elasticbeanstalk.com/usdr/apy', path: 'usdr' }) },
   { name: 'maticX',  fetchFn: () => defaultFetch({ tokens: ['0xfa68fb4628dff1028cfec22b4162fccd0d45efb6'], url: 'https://universe.staderlabs.com/polygon/apy', path: 'value' }) },
-  { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://www.binance.com/bapi/earn/v1/public/pos/cftoken/project/rewardRateList?projectId=BETH', path: 'data.0.rewardRate' }) },
+  // { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://www.binance.com/bapi/earn/v1/public/pos/cftoken/project/rewardRateList?projectId=BETH', path: 'data.0.rewardRate' }) },
   // { name: 'euler',     fetchFn: euler },
 ]
 
