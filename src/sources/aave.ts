@@ -57,6 +57,11 @@ const wrappedTokensMap = {
         aToken: '0x018008bfb33d285247a21d44e50697654f754e63',
         underlying: '0x6b175474e89094c44da98b954eedeac495271d0f',
       },
+      // WETH
+      '0x59463bb67ddd04fe58ed291ba36c26d99a39fbc6': {
+        aToken: '0x4d5f47fa6a74757f35c14fd3a6ef8e3c9bc514e8',
+        underlying: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+      },
     },
     [137]: {
       // Matic
@@ -78,7 +83,12 @@ const wrappedTokensMap = {
       '0xdb6df721a6e7fdb97363079b01f107860ac156f9': {
         aToken: '0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee',
         underlying: '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
-      }
+      },
+      // WETH
+      '0xa5bbf0f46b9dc8a43147862ba35c8134eb45f1f5': {
+        aToken: '0xe50fa9b3c56ffb159cb0fca61f5c9d750e8128c8',
+        underlying: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
+      },
     },
     [42161]: {
       // USDT
