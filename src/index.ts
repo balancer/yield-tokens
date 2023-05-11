@@ -30,6 +30,7 @@ const tokens = [
   { name: 'reaper',  fetchFn: reaper },
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
+  { name: 'vEth',    fetchFn: () => defaultFetch({ tokens: ['0x4Bc3263Eb5bb2Ef7Ad9aB6FB68be80E43b43801F'], url: 'https://apy.liebi.com/veth', path: 'veth' }) },
   { name: 'stEth',   fetchFn: () => defaultFetch({ tokens: ['0xae7ab96520de3a18e5e111b5eaab095312d7fe84', '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0', '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd', '0x5979d7b546e38e414f7e9822514be443a4800529'], url: 'https://eth-api.lido.fi/v1/protocol/steth/apr/sma', path: 'data.smaApr' }) },
   { name: 'stMatic', fetchFn: () => defaultFetch({ tokens: ['0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4'], url: 'https://polygon.lido.fi/api/stats', path: 'apr' }) },
   { name: 'cbEth',   fetchFn: () => defaultFetch({ tokens: ['0xbe9895146f7af43049ca1c1ae358b0541ea49704'], url: 'https://api.exchange.coinbase.com/wrapped-assets/CBETH/', path: 'apy', scale: 10000 }) },
