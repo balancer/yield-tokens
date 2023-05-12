@@ -40,7 +40,7 @@ const tokens = [
   { name: 'usdr',    fetchFn: () => defaultFetch({ tokens: ['0xaf0d9d65fc54de245cda37af3d18cbec860a4d4b'], url: 'http://usdr-api.us-east-1.elasticbeanstalk.com/usdr/apy', path: 'usdr' }) },
   { name: 'maticX',  fetchFn: () => defaultFetch({ tokens: ['0xfa68fb4628dff1028cfec22b4162fccd0d45efb6'], url: 'https://universe.staderlabs.com/polygon/apy', path: 'value' }) },
   // Had to proxy this one because Binance API was blocking requests from Cloudflare, original URL: https://www.binance.com/bapi/earn/v1/public/pos/cftoken/project/rewardRateList?projectId=BETH
-  { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-683e4669-de62-4f89-9609-2e24ba8acfa7/default/binance', path: 'data.0.rewardRate' }) },
+  { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-683e4669-de62-4f89-9609-2e24ba8acfa7/default/binance', path: 'data.0.rewardRate', scale: 10000 }) },
   // { name: 'euler',     fetchFn: euler },
 ]
 
