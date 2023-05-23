@@ -3,7 +3,7 @@ export const defaultFetch = async (options: { tokens: string[]; url: string; pat
   const request = new Request(url, { headers: { 'User-Agent': 'cf' } })
   const response = await fetch(request)
   const json = await response.json()
-  const value = getValueFromPath(json, path)
+  const value = (path === '') ? json : getValueFromPath(json, path)
   const scaledValue = Math.round(parseFloat(value) * scale)
 
   return tokens.reduce((acc, token) => {
