@@ -42,7 +42,7 @@ const tokens = [
   // Had to proxy this one because Binance API was blocking requests from Cloudflare, original URL: https://www.binance.com/bapi/earn/v1/public/pos/cftoken/project/rewardRateList?projectId=BETH
   { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-683e4669-de62-4f89-9609-2e24ba8acfa7/default/binance', path: 'data.0.rewardRate', scale: 10000 }) },
   { name: 'swETH',   fetchFn: () => defaultFetch({ tokens: ['0xf951e335afb289353dc249e82926178eac7ded78'], url: 'https://v3.svc.swellnetwork.io/api/tokens/sweth/apr', path: '', scale: 100 }) },
-  { name: 'wjAURA',  fetchFn: () => defaultFetch({ tokens: ['0x198d7387fa97a73f05b8578cdeff8f2a1f34cd1f'], url: 'https://data.jonesdao.io/api/v1/jones/apy-wjaura', path: 'wjauraApy', scale: 100 }) },
+  { name: 'wjAURA',  fetchFn: () => defaultFetch({ tokens: ['0x198d7387fa97a73f05b8578cdeff8f2a1f34cd1f'], url: 'https://data.jonesdao.io/api/v1/jones/apy-wjaura', path: 'wjauraApy', scale: 200 }) },
   // { name: 'euler',     fetchFn: euler },
 ]
 
