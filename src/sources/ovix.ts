@@ -44,7 +44,7 @@ export const ovix = async () => {
     const borrowRates = await getBorrowRates()
 
     const aprs = Object.keys(wrappedTokens).map((coin, i) => [
-      yieldTokens[coin],
+      wrappedTokens[coin],
       Math.round(10000 * (Math.pow(1 + Number(borrowRates[i].result) / 1e18, 365 * 24 * 60 * 60) - 1))
     ])
 
