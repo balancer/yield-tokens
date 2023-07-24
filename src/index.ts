@@ -1,5 +1,4 @@
 import { aave } from './sources/aave'
-import { ankr } from './sources/ankr';
 import { idle } from './sources/idle';
 import { tranchess } from './sources/tranchess';
 import { gearbox } from './sources/gearbox';
@@ -27,7 +26,7 @@ const tokens = [
   { name: 'aaveV3Mainnet', fetchFn: () => aave(1, 'v3') },
   { name: 'aaveV3Polygon', fetchFn: () => aave(137, 'v3') },
   { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
-  { name: 'ankr',    fetchFn: ankr },
+  { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
   { name: 'reaper',  fetchFn: reaper },
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
@@ -45,6 +44,11 @@ const tokens = [
   { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-683e4669-de62-4f89-9609-2e24ba8acfa7/default/binance', path: 'data.0.rewardRate', scale: 10000 }) },
   { name: 'swETH',   fetchFn: () => defaultFetch({ tokens: ['0xf951e335afb289353dc249e82926178eac7ded78'], url: 'https://v3.svc.swellnetwork.io/api/tokens/sweth/apr', path: '', scale: 100 }) },
   { name: 'wjAURA',  fetchFn: () => defaultFetch({ tokens: ['0x198d7387fa97a73f05b8578cdeff8f2a1f34cd1f'], url: 'https://data.jonesdao.io/api/v1/jones/apy-wjaura', path: 'wjauraApy', scale: 200 }) },
+  { name: 'yyAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xf7d9281e8e363584973f946201b82ba72c965d27'], url: 'https://staging-api.yieldyak.com/yyavax', path: 'yyAVAX.apr', scale: 100 }) },
+  { name: 'ankrETH', fetchFn: () => defaultFetch({ tokens: ['0x12d8ce035c5de3ce39b1fdd4c1d5a745eaba3b8c', '0xe95a203b1a91a908f9b9ce46459d101078c2c3cb'], url: 'https://api.staking.ankr.com/v1alpha/metrics', path: 'services.{serviceName == "eth"}.apy', scale: 100 }) },
+  { name: 'ankrAVAX', fetchFn: () => defaultFetch({ tokens: ['0xc3344870d52688874b06d844e0c36cc39fc727f6'], url: 'https://api.staking.ankr.com/v1alpha/metrics', path: 'services.{serviceName == "avax"}.apy', scale: 100 }) },
+  { name: 'sAVAX',   fetchFn: () => defaultFetch({ tokens: ['0x2b2c81e08f1af8835a78bb2a90ae924ace0ea4be'], url: 'https://api.benqi.fi/liquidstaking/apr', path: 'apr', scale: 10000 }) },
+  { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
   // { name: 'euler',     fetchFn: euler },
 ]
 
