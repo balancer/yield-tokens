@@ -19,7 +19,7 @@ export const maker = async () => {
       }]
     })
     const dsr = res[0].result
-    const apr = Math.round(((Number(dsr) * (10 ** -27)) - 1 )* 365 * 24 * 60 * 60 * 1000)
+    const apr = Math.round(((Number(dsr) * (10 ** -27)) - 1 ) * 365 * 24 * 60 * 60 * 10000)
     return { [sDAI]: apr }
   } catch (error) {
     console.log(error)
