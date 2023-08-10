@@ -160,6 +160,11 @@ const tokens = {
       aToken: '0x625e7708f30ca75bfd92586e17077590c60eb4cd',
       underlying: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
     }, {
+      // stataArbUSDCn
+      wrappedToken: '0xbde67e089886ec0e615d6f054bc6f746189a3d56',
+      aToken: '0x625e7708f30ca75bfd92586e17077590c60eb4cd',
+      underlying: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
+    }, {
       // waDAI
       wrappedToken: '0x345a864ac644c82c2d649491c905c71f240700b2',
       aToken: '0x82e64f49ed5ec1bc6e43dad4fc8af9bb3a2312ee',
