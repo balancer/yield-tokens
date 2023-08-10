@@ -297,7 +297,6 @@ export const aave = async (network: 1 | 137 | 42161 | 43114, version: keyof (typ
       reserves.filter((r) => {
         return underlyingAssets.includes(r.underlyingAsset.toLowerCase())
       }).map((r) => {
-        console.log(r.liquidityRate);
         return [r.underlyingAsset.toLowerCase(), Math.round(Number(r.liquidityRate.slice(0, -20)) / 1e3)]
       })
     )
@@ -308,7 +307,7 @@ export const aave = async (network: 1 | 137 | 42161 | 43114, version: keyof (typ
     })
     return Object.fromEntries(aprEntries)
   } catch (error) {
-    console.log(error)
+    console.warn(error)
 
     return {}
   }
