@@ -49,6 +49,7 @@ const tokens = [
   { name: 'ankrAVAX', fetchFn: () => defaultFetch({ tokens: ['0xc3344870d52688874b06d844e0c36cc39fc727f6'], url: 'https://api.staking.ankr.com/v1alpha/metrics', path: 'services.{serviceName == "avax"}.apy', scale: 100 }) },
   { name: 'sAVAX',   fetchFn: () => defaultFetch({ tokens: ['0x2b2c81e08f1af8835a78bb2a90ae924ace0ea4be'], url: 'https://api.benqi.fi/liquidstaking/apr', path: 'apr', scale: 10000 }) },
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
+  { name: 'ggAVAX', fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://ceres.gogopool.com', path: 'ggAVAXMonthlyInterestMonth.value', scale: -1200 }) },
   // { name: 'euler',     fetchFn: euler },
 ]
 
