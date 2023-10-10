@@ -1,6 +1,6 @@
-import { createPublicClient, http } from "viem";
-import { mainnet } from "viem/chains";
-import { abi } from "./abis/bloom-bps-feed";
+import { createPublicClient, http } from "viem"
+import { mainnet } from "viem/chains"
+import { abi } from "./abis/bloom-bps-feed"
 
 const client = createPublicClient({
   chain: mainnet,
@@ -9,10 +9,11 @@ const client = createPublicClient({
 
 const tokens = {
   tbyFeb1924: {
-    address: '0x7966c5bae631294d7cffcea5430b78c2f76db6fa', 
+    address: '0xc4cafefbc3dfea629c589728d648cb6111db3136', 
     feedAddress: '0xde1f5f2d69339171d679fb84e4562febb71f36e6'
   },
 }
+
 export const bloom = async () => {
   try {
     const res = await client.multicall({

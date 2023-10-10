@@ -33,7 +33,7 @@ const tokens = [
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
   { name: 'ovix',    fetchFn: ovix },
-  {name: 'bloom', fetchFn: bloom},
+  { name: 'bloom',   fetchFn: bloom },
   { name: 'vEth',    fetchFn: () => defaultFetch({ tokens: ['0x4bc3263eb5bb2ef7ad9ab6fb68be80e43b43801f'], url: 'https://apy.liebi.com/veth', path: 'veth' }) },
   { name: 'stEth',   fetchFn: () => defaultFetch({ tokens: ['0x1f32b1c2345538c0c6f582fcb022739c4a194ebb', '0x6c76971f98945ae98dd7d4dfca8711ebea946ea6', '0x5d8cff95d7a57c0bf50b30b43c7cc0d52825d4a9', '0xae7ab96520de3a18e5e111b5eaab095312d7fe84', '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0', '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd', '0x5979d7b546e38e414f7e9822514be443a4800529'], url: 'https://eth-api.lido.fi/v1/protocol/steth/apr/sma', path: 'data.smaApr' }) },
   { name: 'stMatic', fetchFn: () => defaultFetch({ tokens: ['0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4'], url: 'https://polygon.lido.fi/api/stats', path: 'apr' }) },
@@ -52,8 +52,8 @@ const tokens = [
   { name: 'ankrAVAX', fetchFn: () => defaultFetch({ tokens: ['0xc3344870d52688874b06d844e0c36cc39fc727f6'], url: 'https://api.staking.ankr.com/v1alpha/metrics', path: 'services.{serviceName == "avax"}.apy', scale: 100 }) },
   { name: 'sAVAX',   fetchFn: () => defaultFetch({ tokens: ['0x2b2c81e08f1af8835a78bb2a90ae924ace0ea4be'], url: 'https://api.benqi.fi/liquidstaking/apr', path: 'apr', scale: 10000 }) },
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
-  { name: 'ggAVAX', fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://ceres.gogopool.com', path: 'ggAVAXMonthlyInterestMonth.value', scale: -1200 }) },
-  { name: 'sDAI', fetchFn: maker },
+  { name: 'ggAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://ceres.gogopool.com', path: 'ggAVAXMonthlyInterestMonth.value', scale: -1200 }) },
+  { name: 'sDAI',    fetchFn: maker },
   // { name: 'euler',     fetchFn: euler },
 ]
 
