@@ -11,6 +11,7 @@ import { ovix } from './sources/ovix';
 import { defaultFetch } from './sources/default';
 import { maker } from "./sources/maker";
 import { bloom } from "./sources/bloom";
+import { makerGnosis } from './sources/maker-gnosis';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -54,6 +55,7 @@ const tokens = [
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
   { name: 'ggAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://ceres.gogopool.com', path: 'ggAVAXMonthlyInterestMonth.value', scale: -1200 }) },
   { name: 'sDAI',    fetchFn: maker },
+  { name: 'sDAIGnosis', fetchFn: makerGnosis },
   // { name: 'euler',     fetchFn: euler },
 ]
 
