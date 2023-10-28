@@ -54,6 +54,7 @@ const tokens = [
   { name: 'sAVAX',   fetchFn: () => defaultFetch({ tokens: ['0x2b2c81e08f1af8835a78bb2a90ae924ace0ea4be'], url: 'https://api.benqi.fi/liquidstaking/apr', path: 'apr', scale: 10000 }) },
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
   { name: 'ggAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://ceres.gogopool.com', path: 'ggAVAXMonthlyInterestMonth.value', scale: -1200 }) },
+  { name: 'usdm',    fetchFn: () => defaultFetch({ tokens: ['0x57f5e098cad7a3d1eed53991d4d66c45c9af7812'], url: 'https://apy.prod.mountainprotocol.com', path: 'value', scale: 10000 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   // { name: 'euler',     fetchFn: euler },
