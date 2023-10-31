@@ -4,6 +4,7 @@ import { tranchess } from './sources/tranchess';
 import { gearbox } from './sources/gearbox';
 import { overnight } from './sources/overnight';
 import { reaper } from './sources/reaper';
+import { reaperOp } from './sources/reaper-op';
 import { tessera } from './sources/tessera';
 import { tetu } from './sources/tetu';
 import { ovix } from './sources/ovix';
@@ -31,6 +32,7 @@ const tokens = [
   { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
   { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
   { name: 'reaper',  fetchFn: reaper },
+  { name: 'reaperOp',fetchFn: reaperOp },
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
   { name: 'ovix',    fetchFn: ovix },
