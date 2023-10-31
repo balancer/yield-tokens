@@ -13,6 +13,7 @@ import { defaultFetch } from './sources/default';
 import { maker } from "./sources/maker";
 import { bloom } from "./sources/bloom";
 import { makerGnosis } from './sources/maker-gnosis';
+import { reaperOpSubgraph } from './sources/reaper-op-subgraph';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -33,6 +34,7 @@ const tokens = [
   { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
   { name: 'reaper',  fetchFn: reaper },
   { name: 'reaperOp',fetchFn: reaperOp },
+  { name: 'reaperOpSubgraph', fetchFn: reaperOpSubgraph },
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
   { name: 'ovix',    fetchFn: ovix },
