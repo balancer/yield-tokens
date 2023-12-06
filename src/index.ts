@@ -16,6 +16,7 @@ import { beefy } from "./sources/beefy";
 import { makerGnosis } from './sources/maker-gnosis';
 import { reaperOpSubgraph } from './sources/reaper-op-subgraph';
 import { etherfi } from './sources/etherfi';
+import { stakewise } from './sources/stakewise';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -68,6 +69,7 @@ const tokens = [
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   { name: 'etherfi', fetchFn: etherfi },
+  { name: 'stakewise', fetchFn: stakewise },
   // { name: 'euler',     fetchFn: euler },
 ]
 
