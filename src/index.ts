@@ -15,6 +15,7 @@ import { bloom } from "./sources/bloom";
 import { beefy } from "./sources/beefy";
 import { makerGnosis } from './sources/maker-gnosis';
 import { reaperOpSubgraph } from './sources/reaper-op-subgraph';
+import { etherfi } from './sources/etherfi';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -66,6 +67,7 @@ const tokens = [
   { name: 'plsRDNT', fetchFn: () => defaultFetch({ tokens: ['0x6dbf2155b0636cb3fd5359fccefb8a2c02b6cb51'], url: 'https://plutusdao.io/api/getPlsRdntInfo', path: 'apr', scale: 10000 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
+  { name: 'etherfi', fetchFn: etherfi },
   // { name: 'euler',     fetchFn: euler },
 ]
 
