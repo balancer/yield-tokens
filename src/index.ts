@@ -66,7 +66,7 @@ const tokens = [
   { name: 'overnightDAIPlus', fetchFn: () => defaultFetch({ tokens: ['0x0b8f31480249cc717081928b8af733f45f6915bb'], url: 'https://api.overnight.fi/optimism/dai+/fin-data/avg-apr/week', path: 'value' }) },
   { name: 'overnightUSDPlus', fetchFn: () => defaultFetch({ tokens: ['0xa348700745d249c3b49d2c2acac9a5ae8155f826'], url: 'https://api.overnight.fi/optimism/usd+/fin-data/avg-apr/week', path: 'value' }) },
   { name: 'plsRDNT', fetchFn: () => defaultFetch({ tokens: ['0x6dbf2155b0636cb3fd5359fccefb8a2c02b6cb51'], url: 'https://plutusdao.io/api/getPlsRdntInfo', path: 'apr', scale: 10000 }) },
-  { name: 'sFRAX', fetchFn: () => defaultFetch({ tokens: ['0xe3b3fe7bca19ca77ad877a5bebab186becfad906'], url: 'https://api.frax.finance/v2/frax/sfrax/summary/history?range=1d', path: 'items.0.sfraxApr', scale: 100 }) },
+  { name: 'sFRAX', fetchFn: () => defaultFetch({ tokens: ['0xe3b3fe7bca19ca77ad877a5bebab186becfad906', '0x2dd1b4d4548accea497050619965f91f78b3b532'], url: 'https://api.frax.finance/v2/frax/sfrax/summary/history?range=1d', path: 'items.0.sfraxApr', scale: 100 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   { name: 'etherfi', fetchFn: etherfi },
