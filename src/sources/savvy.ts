@@ -28,6 +28,6 @@ export const svEth = async () => {
     })) as bigint;
 
     return {
-        [svETH]: (parseFloat(formatEther(rate)) * 1095) / parseFloat(formatEther(balance)) / 100,
+        [svETH]: Math.round((parseFloat(formatEther(rate)) * 1095) / parseFloat(formatEther(balance)) * 100),
     };
 }
