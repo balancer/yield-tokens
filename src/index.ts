@@ -107,20 +107,20 @@ export default {
           })
         }
       }
-      // } else if (path == 'all') {
-      //   const json = await fetchAndStoreAll(env.YIELD_TOKENS)
-      //   return new Response(JSON.stringify(json), {
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //       'Cache-Control': `s-maxage=600`, // Cache for 10 minutes
-      //       'Access-Control-Allow-Origin': '*', // Allow CORS
-      //     },
-      //   })
-      // }
       return new Response('Not found', {
         status: 404,
       })
     }
+    // else if (path == 'all') {
+    //   const json = await fetchAndStoreAll(env.YIELD_TOKENS)
+    //   return new Response(JSON.stringify(json), {
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Cache-Control': `s-maxage=600`, // Cache for 10 minutes
+    //       'Access-Control-Allow-Origin': '*', // Allow CORS
+    //     },
+    //   })
+    // }
 
     const json = await env.YIELD_TOKENS.get('all', 'text')
     return new Response(json, {
@@ -140,9 +140,9 @@ export default {
 
 // Fetch APRs for all tokens and store them in KV
 const fetchAndStoreAll = async (store: KVNamespace) => {
-  const responses = await Promise.all(
+  const responses = (await Promise.allSettled(
     tokens.map(({ fetchFn }) => fetchFn())
-  )
+  )).filter((r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled').map((r) => r.value)
   const aprs = responses.reduce((acc, val) => ({ ...acc, ...val }), {})
   if (Object.keys(aprs).length > 0) {
     await storeAprs(store, aprs)
