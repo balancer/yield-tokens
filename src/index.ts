@@ -140,10 +140,13 @@ export default {
 
 // Fetch APRs for all tokens and store them in KV
 const fetchAndStoreAll = async (store: KVNamespace) => {
-  const responses = (await Promise.allSettled(
+  const responses = await Promise.allSettled(
     tokens.map(({ fetchFn }) => fetchFn())
-  )).filter((r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled').map((r) => r.value)
-  const aprs = responses.reduce((acc, val) => ({ ...acc, ...val }), {})
+  )
+  const aprs = responses
+    .filter((r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled')
+    .map((r) => r.value)
+    .reduce((acc, val) => ({ ...acc, ...val }), {})
   if (Object.keys(aprs).length > 0) {
     await storeAprs(store, aprs)
   }
