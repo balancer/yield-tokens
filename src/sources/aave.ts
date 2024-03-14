@@ -160,10 +160,20 @@ const tokens = {
       aToken: '0x625e7708f30ca75bfd92586e17077590c60eb4cd',
       underlying: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
     }, {
+      // stataArbUSDT
+      wrappedToken: '0xb165a74407fe1e519d6bcbdec1ed3202b35a4140',
+      aToken: '0x6ab707aca953edaefbc4fd23ba73294241490620',
+      underlying: '0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9',
+    }, {
       // stataArbUSDCn
       wrappedToken: '0xbde67e089886ec0e615d6f054bc6f746189a3d56',
       aToken: '0x625e7708f30ca75bfd92586e17077590c60eb4cd',
       underlying: '0xff970a61a04b1ca14834a43f5de4533ebddb5cc8',
+    }, {
+      // stataArbUSDCn
+      wrappedToken: '0x7cfadfd5645b50be87d546f42699d863648251ad',
+      aToken: '0x724dc807b04555b71ed48a6896b6f41593b8c637',
+      underlying: '0xaf88d065e77c8cc2239327c5edb3a432268e5831',
     }, {
       // waDAI
       wrappedToken: '0x345a864ac644c82c2d649491c905c71f240700b2',
