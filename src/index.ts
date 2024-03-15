@@ -33,6 +33,7 @@ const tokens = [
   { name: 'aaveV2Mainnet', fetchFn: () => aave(1) },
   { name: 'aaveV2Polygon', fetchFn: () => aave(137) },
   { name: 'aaveV3Mainnet', fetchFn: () => aave(1, 'v3') },
+  { name: 'aaveV3Optimism', fetchFn: () => aave(10, 'v3') },
   { name: 'aaveV3Polygon', fetchFn: () => aave(137, 'v3') },
   { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
   { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },

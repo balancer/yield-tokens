@@ -13,5 +13,10 @@
     "start": "wrangler dev",
     "deploy": "wrangler publish",
     "test": "vitest"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
