@@ -58,6 +58,12 @@ const tokens = {
         underlying: '0xdac17f958d2ee523a2206206994597c13d831ec7',
       },
       {
+        // stataEthUSDT
+        wrappedToken: '0x862c57d48becb45583aeba3f489696d22466ca1b',
+        aToken: '0x23878914efe38d27c4d67ab83ed1b93a74d4086a',
+        underlying: '0xdac17f958d2ee523a2206206994597c13d831ec7',
+      },
+      {
         // waUSDT
         wrappedToken: '0xa7e0e66f38b8ad8343cff67118c1f33e827d1455',
         aToken: '0x23878914efe38d27c4d67ab83ed1b93a74d4086a',
