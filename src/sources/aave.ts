@@ -145,6 +145,12 @@ const tokens = {
         aToken: '0x6ab707aca953edaefbc4fd23ba73294241490620',
         underlying: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
       },
+      {
+        //stataPolUSDT
+        wrappedToken: '0x87a1fdc4c726c459f597282be639a045062c0e46',
+        aToken: '0x6ab707aca953edaefbc4fd23ba73294241490620',
+        underlying: '0xc2132d05d31c914a87c6611c10748aeb04b58e8f',
+      },
       // {
       //   //stataPolUSDC - USD Coin
       //   wrappedToken: "missing",
@@ -156,6 +162,12 @@ const tokens = {
         wrappedToken: '0xc04296aa4534f5a3bab2d948705bc89317b2f1ed',
         aToken: '0x625e7708f30ca75bfd92586e17077590c60eb4cd',
         underlying: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
+      },
+      {
+        //stataPolUSDCn - USDCn
+        wrappedToken: '0x2dca80061632f3f87c9ca28364d1d0c30cd79a19',
+        aToken: '0xa4d94019934d8333ef880abffbf2fdd611c762bd',
+        underlying: '0x3c499c542cef5e3811e1192ce70d8cc03d5c3359',
       },
       {
         // waUSDC
