@@ -70,7 +70,7 @@ const tokens = [
   { name: 'plsRDNT', fetchFn: () => defaultFetch({ tokens: ['0x6dbf2155b0636cb3fd5359fccefb8a2c02b6cb51'], url: 'https://plutusdao.io/api/getPlsRdntInfo', path: 'apr', scale: 10000 }) },
   { name: 'sFRAX', fetchFn: () => defaultFetch({ tokens: ['0xe3b3fe7bca19ca77ad877a5bebab186becfad906', '0x2dd1b4d4548accea497050619965f91f78b3b532'], url: 'https://api.frax.finance/v2/frax/sfrax/summary/history?range=1d', path: 'items.0.sfraxApr', scale: 100 }) },
   { name: 'truMATIC', fetchFn: () => defaultFetch({ tokens: ['0xf33687811f3ad0cd6b48dd4b39f9f977bd7165a2'], url: 'https://api.trufin.io/staker/apy?staker=MATIC', path: 'apy', scale: 100 }) },
-  { name: 'ezETH', fetchFn: () => defaultFetch({ tokens: ['0xbf5495efe5db9ce00f80364c8b423567e58d2110'], url: 'https://app.renzoprotocol.com/api/apr', path: 'apr', scale: 100 }) },
+  { name: 'ezETH', fetchFn: () => defaultFetch({ tokens: ['0x2416092f143378750bb29b79ed961ab195cceea5', '0xbf5495efe5db9ce00f80364c8b423567e58d2110'], url: 'https://app.renzoprotocol.com/api/apr', path: 'apr', scale: 100 }) },
   { name: 'rsETH', fetchFn: () => defaultFetch({ tokens: ['0xa1290d69c65a6fe4df752f95823fae25cb99e5a7', '0x8c7d118b5c47a5bcbd47cc51789558b98dad17c5'], url: 'https://universe.kelpdao.xyz/rseth/apy', path: 'value', scale: 100 }) },
   { name: 'sDOLA', fetchFn: () => defaultFetch({ tokens: ['0xb45ad160634c528cc3d2926d9807104fa3157305'], url: 'https://www.inverse.finance/api/dola-staking', path: 'apr', scale: 100 }) },
   { name: 'rswETH', fetchFn: () => defaultFetch({ tokens: ['0xfae103dc9cf190ed75350761e95403b7b8afa6c0'], url: 'https://v3-lrt.svc.swellnetwork.io/api/tokens/rsweth/apr', path: '', scale: 100 }) },
