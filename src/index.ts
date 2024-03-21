@@ -74,6 +74,7 @@ const tokens = [
   { name: 'rsETH', fetchFn: () => defaultFetch({ tokens: ['0xa1290d69c65a6fe4df752f95823fae25cb99e5a7', '0x8c7d118b5c47a5bcbd47cc51789558b98dad17c5'], url: 'https://universe.kelpdao.xyz/rseth/apy', path: 'value', scale: 100 }) },
   { name: 'sDOLA', fetchFn: () => defaultFetch({ tokens: ['0xb45ad160634c528cc3d2926d9807104fa3157305'], url: 'https://www.inverse.finance/api/dola-staking', path: 'apr', scale: 100 }) },
   { name: 'rswETH', fetchFn: () => defaultFetch({ tokens: ['0xfae103dc9cf190ed75350761e95403b7b8afa6c0'], url: 'https://v3-lrt.svc.swellnetwork.io/api/tokens/rsweth/apr', path: '', scale: 100 }) },
+  { name: 'uniETH', fetchFn: () => defaultFetch({ tokens: ['0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4'], url: 'https://app.bedrock.technology/unieth/api/v1/e2ls/apy', path: 'data.apy', scale: 10000 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   { name: 'etherfi', fetchFn: etherfi },
