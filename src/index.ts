@@ -1,10 +1,10 @@
 import { aave } from './sources/aave'
 import { idle } from './sources/idle';
 import { tranchess } from './sources/tranchess';
-import { gearbox } from './sources/gearbox';
-import { overnight } from './sources/overnight';
-import { reaper } from './sources/reaper';
-import { reaperOp } from './sources/reaper-op';
+// import { gearbox } from './sources/gearbox';
+// import { overnight } from './sources/overnight';
+// import { reaper } from './sources/reaper';
+// import { reaperOp } from './sources/reaper-op';
 import { tessera } from './sources/tessera';
 import { tetu } from './sources/tetu';
 import { ovix } from './sources/ovix';
@@ -14,7 +14,7 @@ import { maker } from "./sources/maker";
 import { bloom } from "./sources/bloom";
 import { beefy } from "./sources/beefy";
 import { makerGnosis } from './sources/maker-gnosis';
-import { reaperOpSubgraph } from './sources/reaper-op-subgraph';
+// import { reaperOpSubgraph } from './sources/reaper-op-subgraph';
 import { etherfi } from './sources/etherfi';
 import { stakewise } from './sources/stakewise';
 import { svEth } from './sources/savvy';
@@ -28,8 +28,8 @@ const tokens = [
   { name: 'idleUsdc',  fetchFn: () => idle('0xc3da79e0de523eef7ac1e4ca9abfe3aac9973133') },
   { name: 'idleUsdt',  fetchFn: () => idle('0x544897a3b944fdeb1f94a0ed973ea31a80ae18e1') },
   { name: 'qETH',      fetchFn: tranchess },
-  { name: 'gearbox',   fetchFn: gearbox },
-  { name: 'overnight', fetchFn: overnight },
+  // { name: 'gearbox',   fetchFn: gearbox },
+  // { name: 'overnight', fetchFn: overnight },
   { name: 'aaveV2Mainnet', fetchFn: () => aave(1) },
   { name: 'aaveV2Polygon', fetchFn: () => aave(137) },
   { name: 'aaveV3Mainnet', fetchFn: () => aave(1, 'v3') },
@@ -37,9 +37,9 @@ const tokens = [
   { name: 'aaveV3Polygon', fetchFn: () => aave(137, 'v3') },
   { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
   { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
-  { name: 'reaper',  fetchFn: reaper },
-  { name: 'reaperOp',fetchFn: reaperOp },
-  { name: 'reaperOpSubgraph', fetchFn: reaperOpSubgraph },
+  // { name: 'reaper',  fetchFn: reaper },
+  // { name: 'reaperOp',fetchFn: reaperOp },
+  // { name: 'reaperOpSubgraph', fetchFn: reaperOpSubgraph },
   { name: 'tessera', fetchFn: tessera },
   { name: 'tetu',    fetchFn: tetu },
   { name: 'ovix',    fetchFn: ovix },
@@ -66,8 +66,8 @@ const tokens = [
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
   { name: 'ggAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://api.gogopool.com/metrics/apy', path: 'total_apy_after_fees', scale: 100 }) },
   { name: 'usdm',    fetchFn: () => defaultFetch({ tokens: ['0x57f5e098cad7a3d1eed53991d4d66c45c9af7812'], url: 'https://apy.prod.mountainprotocol.com', path: 'value', scale: 10000 }) },
-  { name: 'overnightDAIPlus', fetchFn: () => defaultFetch({ tokens: ['0x0b8f31480249cc717081928b8af733f45f6915bb'], url: 'https://api.overnight.fi/optimism/dai+/fin-data/avg-apr/week', path: 'value' }) },
-  { name: 'overnightUSDPlus', fetchFn: () => defaultFetch({ tokens: ['0xa348700745d249c3b49d2c2acac9a5ae8155f826'], url: 'https://api.overnight.fi/optimism/usd+/fin-data/avg-apr/week', path: 'value' }) },
+  // { name: 'overnightDAIPlus', fetchFn: () => defaultFetch({ tokens: ['0x0b8f31480249cc717081928b8af733f45f6915bb'], url: 'https://api.overnight.fi/optimism/dai+/fin-data/avg-apr/week', path: 'value' }) },
+  // { name: 'overnightUSDPlus', fetchFn: () => defaultFetch({ tokens: ['0xa348700745d249c3b49d2c2acac9a5ae8155f826'], url: 'https://api.overnight.fi/optimism/usd+/fin-data/avg-apr/week', path: 'value' }) },
   { name: 'plsRDNT', fetchFn: () => defaultFetch({ tokens: ['0x6dbf2155b0636cb3fd5359fccefb8a2c02b6cb51'], url: 'https://plutusdao.io/api/getPlsRdntInfo', path: 'apr', scale: 10000 }) },
   { name: 'sFRAX', fetchFn: () => defaultFetch({ tokens: ['0xa663b02cf0a4b149d2ad41910cb81e23e1c41c32', '0xe3b3fe7bca19ca77ad877a5bebab186becfad906', '0x2dd1b4d4548accea497050619965f91f78b3b532'], url: 'https://api.frax.finance/v2/frax/sfrax/summary/history?range=1d', path: 'items.0.sfraxApr', scale: 100 }) },
   { name: 'truMATIC', fetchFn: () => defaultFetch({ tokens: ['0xf33687811f3ad0cd6b48dd4b39f9f977bd7165a2'], url: 'https://api.trufin.io/staker/apy?staker=MATIC', path: 'apy', scale: 100 }) },
