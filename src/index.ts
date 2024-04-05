@@ -1,5 +1,5 @@
 import { aave } from './sources/aave'
-import { idle } from './sources/idle';
+// import { idle } from './sources/idle';
 import { tranchess } from './sources/tranchess';
 // import { gearbox } from './sources/gearbox';
 // import { overnight } from './sources/overnight';
@@ -24,9 +24,9 @@ export interface Env {
 }
 
 const tokens = [
-  { name: 'idleDai',   fetchFn: () => idle('0x0c80f31b840c6564e6c5e18f386fad96b63514ca') },
-  { name: 'idleUsdc',  fetchFn: () => idle('0xc3da79e0de523eef7ac1e4ca9abfe3aac9973133') },
-  { name: 'idleUsdt',  fetchFn: () => idle('0x544897a3b944fdeb1f94a0ed973ea31a80ae18e1') },
+  // { name: 'idleDai',   fetchFn: () => idle('0x0c80f31b840c6564e6c5e18f386fad96b63514ca') },
+  // { name: 'idleUsdc',  fetchFn: () => idle('0xc3da79e0de523eef7ac1e4ca9abfe3aac9973133') },
+  // { name: 'idleUsdt',  fetchFn: () => idle('0x544897a3b944fdeb1f94a0ed973ea31a80ae18e1') },
   { name: 'qETH',      fetchFn: tranchess },
   // { name: 'gearbox',   fetchFn: gearbox },
   // { name: 'overnight', fetchFn: overnight },
@@ -53,7 +53,7 @@ const tokens = [
   { name: 'rETH',    fetchFn: () => defaultFetch({ tokens: ['0x9bcef72be871e61ed4fbbc7630889bee758eb81d', '0xb23c20efce6e24acca0cef9b7b7aa196b84ec942', '0xae78736cd615f374d3085123a210448e74fc6393', '0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'], url: 'https://api.rocketpool.net/api/apr', path: 'yearlyAPR' }) },
   { name: 'sfrxETH', fetchFn: () => defaultFetch({ tokens: ['0x484c2d6e3cdd945a8b2df735e079178c1036578c', '0xac3e018457b222d93114458476f3e3416abbe38f', '0x95ab45875cffdba1e5f451b950bc2e42c0053f39'], url: 'https://api.frax.finance/v2/frxeth/summary/latest', path: 'sfrxethApr' }) },
   { name: 'stafi',   fetchFn: () => defaultFetch({ tokens: ['0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593'], url: 'https://drop-api.stafi.io/reth/v1/poolData', path: 'data.stakeApr' }) },
-  { name: 'usdr',    fetchFn: () => defaultFetch({ tokens: ['0xaf0d9d65fc54de245cda37af3d18cbec860a4d4b'], url: 'http://usdr-api.us-east-1.elasticbeanstalk.com/usdr/apy', path: 'usdr' }) },
+  // { name: 'usdr',    fetchFn: () => defaultFetch({ tokens: ['0xaf0d9d65fc54de245cda37af3d18cbec860a4d4b'], url: 'http://usdr-api.us-east-1.elasticbeanstalk.com/usdr/apy', path: 'usdr' }) },
   { name: 'maticX',  fetchFn: () => defaultFetch({ tokens: ['0xfa68fb4628dff1028cfec22b4162fccd0d45efb6'], url: 'https://universe.staderlabs.com/polygon/apy', path: 'value' }) },
   // Had to proxy this one because Binance API was blocking requests from Cloudflare, original URL: https://www.binance.com/bapi/earn/v1/public/pos/cftoken/project/rewardRateList?projectId=BETH
   { name: 'wbETH',   fetchFn: () => defaultFetch({ tokens: ['0xa2e3356610840701bdf5611a53974510ae27e2e1'], url: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-683e4669-de62-4f89-9609-2e24ba8acfa7/default/binance', path: 'data.0.rewardRate', scale: 10000 }) },
