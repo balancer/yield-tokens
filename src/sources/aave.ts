@@ -46,6 +46,7 @@ const tokens = {
         underlying: '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063',
       },
     ],
+    [8453]: [],
     [43114]: [],
     [42161]: [],
   },
@@ -206,6 +207,14 @@ const tokens = {
         underlying: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
       },
     ],
+    [8453]: [
+      {
+        //stataBasUSDC - USD Coin
+        wrappedToken: '0x4ea71a20e655794051d1ee8b6e4a3269b13ccacc',
+        aToken: '0x4e65fe4dba92790696d040ac24aa414708f5c0ab',
+        underlying: '0x833589fcd6edb6e08f4c7c32d4f71b54bda02913',
+      },
+    ],
     [42161]: [
       {
         // waUSDT
@@ -347,6 +356,12 @@ const endpoints = [
   },
   {
     version: 'v3',
+    network: 8453,
+    subgraph:
+      'https://api.goldsky.com/api/public/project_clk74pd7lueg738tw9sjh79d6/subgraphs/aave-v3-base/1.0.0/gn',
+  },
+  {
+    version: 'v3',
     network: 42161,
     subgraph:
       'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-arbitrum',
@@ -391,7 +406,7 @@ interface ReserveResponse {
  * @returns APRs for aave tokens
  */
 export const aave = async (
-  network: 1 | 10 | 137 | 42161 | 43114,
+  network: 1 | 10 | 137 | 8453 | 42161 | 43114,
   version: keyof typeof tokens = 'v2',
 ) => {
   if (
@@ -399,6 +414,7 @@ export const aave = async (
     (network != 1 &&
       network != 10 &&
       network != 137 &&
+      network != 8453 &&
       network != 42161 &&
       network != 43114)
   ) {

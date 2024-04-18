@@ -35,6 +35,7 @@ const tokens = [
   { name: 'aaveV3Mainnet', fetchFn: () => aave(1, 'v3') },
   { name: 'aaveV3Optimism', fetchFn: () => aave(10, 'v3') },
   { name: 'aaveV3Polygon', fetchFn: () => aave(137, 'v3') },
+  { name: 'aaveV3Base', fetchFn: () => aave(8453, 'v3') },
   { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
   { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
   // { name: 'reaper',  fetchFn: reaper },
