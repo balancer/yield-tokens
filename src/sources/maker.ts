@@ -9,18 +9,23 @@ const client = createPublicClient({
 
 const potAddress = '0x197e90f9fad81970ba7976f33cbd77088e5d7cf7'
 const sDAI = '0x83f20f44975d03b1b09e64809b757c47f942beea'
+const sDAIBase = '0x99ac4484e8a1dbd6a185380b3a811913ac884d87'
 export const maker = async () => {
   try {
     const res = await client.multicall({
-      contracts: [{
-        address: potAddress,
-        abi,
-        functionName: 'dsr',
-      }]
+      contracts: [
+        {
+          address: potAddress,
+          abi,
+          functionName: 'dsr',
+        },
+      ],
     })
     const dsr = res[0].result
-    const apr = Math.round(((Number(dsr) * (10 ** -27)) - 1 ) * 365 * 24 * 60 * 60 * 10000)
-    return { [sDAI]: apr }
+    const apr = Math.round(
+      (Number(dsr) * 10 ** -27 - 1) * 365 * 24 * 60 * 60 * 10000,
+    )
+    return { [sDAI]: apr, [sDAIBase]: apr }
   } catch (error) {
     console.log(error)
     return {}
