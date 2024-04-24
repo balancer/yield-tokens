@@ -78,6 +78,7 @@ const tokens = [
   { name: 'rswETH', fetchFn: () => defaultFetch({ tokens: ['0xfae103dc9cf190ed75350761e95403b7b8afa6c0'], url: 'https://v3-lrt.svc.swellnetwork.io/api/tokens/rsweth/apr', path: '', scale: 100 }) },
   { name: 'uniETH', fetchFn: () => defaultFetch({ tokens: ['0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4'], url: 'https://app.bedrock.technology/unieth/api/v1/e2ls/apy', path: 'data.apy', scale: 10000 }) },
   { name: 'sUSDe', fetchFn: () => defaultFetch({ tokens: ['0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2', '0x9d39a5de30e57443bff2a8307a4256c8797a3497'], url: 'https://ethena.fi/api/yields/protocol-and-staking-yield', path: 'stakingYield.value', scale: 100 }) },
+  { name: 'jitoSOL', fetchFn: () => defaultFetch({ tokens: ['0x83e1d2310ade410676b1733d16e89f91822fd5c3'], url: 'https://kobe.mainnet.jito.network/api/v1/stake_pool_stats', path: 'apy.0.data', scale: 10000 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   { name: 'etherfi', fetchFn: etherfi },
