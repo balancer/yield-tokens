@@ -37,5 +37,7 @@ export const etherfi = async () => {
 
   return {
     '0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee': Math.round(avgApr),
+    '0x346e03f8cce9fe01dcb3d0da3e9d00dc2c0e08f0': Math.round(avgApr),
+    '0x35751007a407ca6feffe80b3cb397736d2cf4dbe': Math.round(avgApr),
   }
 }
