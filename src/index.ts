@@ -18,6 +18,7 @@ import { makerGnosis } from './sources/maker-gnosis';
 import { etherfi } from './sources/etherfi';
 import { stakewise } from './sources/stakewise';
 import { svEth } from './sources/savvy';
+import { mapleSyrup } from './sources/maple-syrup';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -86,6 +87,7 @@ const tokens = [
   { name: 'etherfi', fetchFn: etherfi },
   { name: 'stakewise', fetchFn: stakewise },
   { name: 'svEth', fetchFn: svEth },
+  { name: 'mapleSyrup', fetchFn: mapleSyrup },
   // { name: 'euler',     fetchFn: euler },
 ]
 
