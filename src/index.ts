@@ -22,6 +22,7 @@ import { mapleSyrup } from './sources/maple-syrup';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
+  SUBGRAPH_API_KEY: string;
 }
 
 const tokens = [
@@ -31,14 +32,14 @@ const tokens = [
   { name: 'qETH',      fetchFn: tranchess },
   // { name: 'gearbox',   fetchFn: gearbox },
   // { name: 'overnight', fetchFn: overnight },
-  { name: 'aaveV2Mainnet', fetchFn: () => aave(1) },
-  { name: 'aaveV2Polygon', fetchFn: () => aave(137) },
-  { name: 'aaveV3Mainnet', fetchFn: () => aave(1, 'v3') },
-  { name: 'aaveV3Optimism', fetchFn: () => aave(10, 'v3') },
-  { name: 'aaveV3Polygon', fetchFn: () => aave(137, 'v3') },
-  { name: 'aaveV3Base', fetchFn: () => aave(8453, 'v3') },
-  { name: 'aaveV3Arbitrum', fetchFn: () => aave(42161, 'v3') },
-  { name: 'aaveV3Avalanche', fetchFn: () => aave(43114, 'v3') },
+  { name: 'aaveV2Mainnet', fetchFn: (subgraphUrl: string) => aave(1, 'v2', subgraphUrl) },
+  { name: 'aaveV2Polygon', fetchFn: (subgraphUrl: string) => aave(137, 'v2', subgraphUrl) },
+  { name: 'aaveV3Mainnet', fetchFn: (subgraphUrl: string) => aave(1, 'v3', subgraphUrl) },
+  { name: 'aaveV3Optimism', fetchFn: (subgraphUrl: string) => aave(10, 'v3', subgraphUrl) },
+  { name: 'aaveV3Polygon', fetchFn: (subgraphUrl: string) => aave(137, 'v3', subgraphUrl) },
+  { name: 'aaveV3Base', fetchFn: (subgraphUrl: string) => aave(8453, 'v3', subgraphUrl) },
+  { name: 'aaveV3Arbitrum', fetchFn: (subgraphUrl: string) => aave(42161, 'v3', subgraphUrl) },
+  { name: 'aaveV3Avalanche', fetchFn: (subgraphUrl: string) => aave(43114, 'v3', subgraphUrl) },
   // { name: 'reaper',  fetchFn: reaper },
   // { name: 'reaperOp',fetchFn: reaperOp },
   // { name: 'reaperOpSubgraph', fetchFn: reaperOpSubgraph },
@@ -106,7 +107,7 @@ export default {
     if (path && names.includes(path)) {
       const token = tokens.find((t) => t.name === path)
       if (token) {
-        const aprs = await token.fetchFn()
+        const aprs = await token.fetchFn(env.SUBGRAPH_API_KEY)
         if (aprs) {
           ctx.waitUntil(storeAprs(env.YIELD_TOKENS, aprs))
           return new Response(JSON.stringify(aprs), {
@@ -122,7 +123,7 @@ export default {
       })
     }
     // else if (path == 'all') {
-    //   const json = await fetchAndStoreAll(env.YIELD_TOKENS)
+    //   const json = await fetchAndStoreAll(env.SUBGRAPH_API_KEY, env.YIELD_TOKENS)
     //   return new Response(JSON.stringify(json), {
     //     headers: {
     //       'Content-Type': 'application/json',
@@ -144,14 +145,14 @@ export default {
 
   // Scheduled events are run every 10 minutes
   async scheduled(event: ScheduledEvent, env: Env, ctx: ExecutionContext) {
-    ctx.waitUntil(fetchAndStoreAll(env.YIELD_TOKENS))
+    ctx.waitUntil(fetchAndStoreAll(env.SUBGRAPH_API_KEY, env.YIELD_TOKENS))
   },
 };
 
 // Fetch APRs for all tokens and store them in KV
-const fetchAndStoreAll = async (store: KVNamespace) => {
+const fetchAndStoreAll = async (subgraphApiKey: string, store: KVNamespace) => {
   const responses = await Promise.allSettled(
-    tokens.map(({ fetchFn }) => fetchFn())
+    tokens.map(({ fetchFn }) => fetchFn(subgraphApiKey))
   )
   const aprs = responses
     .filter((r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled')
@@ -164,10 +165,10 @@ const fetchAndStoreAll = async (store: KVNamespace) => {
 }
 
 // Fetch APRs for a single token and store them in KV
-const fetchAndStore = async (store: KVNamespace) => {
+const fetchAndStore = async (subgraphApiKey: string, store: KVNamespace) => {
   const next = Number(await store.get('next'))
   const token = tokens[next]
-  const aprs = await token.fetchFn()
+  const aprs = await token.fetchFn(subgraphApiKey)
   if (aprs) {
     await storeAprs(store, aprs)
   }

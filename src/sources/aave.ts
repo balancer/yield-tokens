@@ -330,47 +330,52 @@ const endpoints = [
   {
     version: 'v2',
     network: 1,
-    subgraph: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2',
+    subgraph:
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/8wR23o1zkS4gpLqLNU4kG3JHYVucqGyopL5utGxP2q1N',
   },
   {
     version: 'v2',
     network: 137,
-    subgraph: 'https://api.thegraph.com/subgraphs/name/aave/aave-v2-matic',
+    subgraph:
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/H1Et77RZh3XEf27vkAmJyzgCME2RSFLtDS2f4PPW6CGp',
   },
   {
     version: 'v3',
     network: 1,
-    subgraph: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v3',
+    subgraph:
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/Cd2gEDVeqnjBn1hSeqFMitw8Q1iiyV9FYUZkLNRcL87g',
   },
   {
     version: 'v3',
     network: 10,
     subgraph:
-      'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-optimism',
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/DSfLz8oQBUeU5atALgUFQKMTSYV9mZAVYp4noLSXAfvb',
   },
   {
     version: 'v3',
     network: 137,
     subgraph:
-      'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-polygon',
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/Co2URyXjnxaw8WqxKyVHdirq9Ahhm5vcTs4dMedAq211',
   },
   {
     version: 'v3',
     network: 8453,
     subgraph:
-      'https://api.goldsky.com/api/public/project_clk74pd7lueg738tw9sjh79d6/subgraphs/aave-v3-base/1.0.0/gn',
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/GQFbb95cE6d8mV989mL5figjaGaKCQB3xqYrr1bRyXqF',
+    // subgraph:
+    //   'https://api.goldsky.com/api/public/project_clk74pd7lueg738tw9sjh79d6/subgraphs/aave-v3-base/1.0.0/gn',
   },
   {
     version: 'v3',
     network: 42161,
     subgraph:
-      'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-arbitrum',
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/DLuE98kEb5pQNXAcKFQGQgfSQ57Xdou4jnVbAEqMfy3B',
   },
   {
     version: 'v3',
     network: 43114,
     subgraph:
-      'https://api.thegraph.com/subgraphs/name/aave/protocol-v3-avalanche',
+      'https://gateway-arbitrum.network.thegraph.com/api/{API_KEY}/subgraphs/id/2h9woxy8RTjHu1HJsCEnmzpPHFArU33avmUh4f71JpVn',
   },
 ]
 
@@ -408,6 +413,7 @@ interface ReserveResponse {
 export const aave = async (
   network: 1 | 10 | 137 | 8453 | 42161 | 43114,
   version: keyof typeof tokens = 'v2',
+  subgraphApiKey: string,
 ) => {
   if (
     !network ||
@@ -448,10 +454,13 @@ export const aave = async (
       throw 'no endpoint found'
     }
 
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      body: JSON.stringify(requestQuery),
-    })
+    const response = await fetch(
+      endpoint.replace('{API_KEY}', subgraphApiKey),
+      {
+        method: 'POST',
+        body: JSON.stringify(requestQuery),
+      },
+    )
 
     const {
       data: { reserves },
