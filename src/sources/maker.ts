@@ -11,7 +11,7 @@ const potAddress = '0x197e90f9fad81970ba7976f33cbd77088e5d7cf7'
 const sDAI = '0x83f20f44975d03b1b09e64809b757c47f942beea'
 const sDAIBase = '0x99ac4484e8a1dbd6a185380b3a811913ac884d87'
 const sDAIOP = '0x2218a117083f5b482b0bb821d27056ba9c04b1d3'
-const sDAIFraxtal = '0x09eAdcBAa812A4C076c3a6cDe765DC4a22E0d775'
+const sDAIFraxtal = '0x09eadcbaa812a4c076c3a6cde765dC4a22e0d775'
 
 export const maker = async () => {
   try {
