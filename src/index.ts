@@ -19,7 +19,6 @@ import { etherfi } from './sources/etherfi';
 import { stakewise } from './sources/stakewise';
 import { svEth } from './sources/savvy';
 import { mapleSyrup } from './sources/maple-syrup';
-import { gUSDC } from './sources/gUSDC';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -84,13 +83,13 @@ const tokens = [
   { name: 'sUSDe', fetchFn: () => defaultFetch({ tokens: ['0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2', '0x9d39a5de30e57443bff2a8307a4256c8797a3497', '0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2'], url: 'https://ethena.fi/api/yields/protocol-and-staking-yield', path: 'stakingYield.value', scale: 100 }) },
   { name: 'jitoSOL', fetchFn: () => defaultFetch({ tokens: ['0x83e1d2310ade410676b1733d16e89f91822fd5c3'], url: 'https://kobe.mainnet.jito.network/api/v1/stake_pool_stats', path: 'apy.0.data', scale: 10000 }) },
   { name: 'woETH', fetchFn: () => defaultFetch({ tokens: ['0xd8724322f44e5c58d7a815f542036fb17dbbf839'], url: 'https://analytics.ousd.com/api/v2/oeth/apr/trailing', path: 'apr' }) },
+  { name: 'gUSDC', fetchFn: () => defaultFetch({ tokens: ['0xd3443ee1e91af28e5fb858fbd0d72a63ba8046e0'], url: 'https://backend-arbitrum.gains.trade/apr', path: 'collateralRewards.{symbol == "USDC"}.vaultApr', scale: 100 }) },
   { name: 'sDAI',    fetchFn: maker },
   { name: 'sDAIGnosis', fetchFn: makerGnosis },
   { name: 'etherfi', fetchFn: etherfi },
   { name: 'stakewise', fetchFn: stakewise },
   { name: 'svEth', fetchFn: svEth },
   { name: 'mapleSyrup', fetchFn: mapleSyrup },
-  { name: 'gUSDC', fetchFn: gUSDC },
   // { name: 'euler',     fetchFn: euler },
 ]
 
