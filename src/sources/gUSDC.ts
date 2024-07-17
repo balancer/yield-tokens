@@ -2,7 +2,7 @@ const url = 'https://backend-arbitrum.gains.trade/apr'
 
 
 const query = `{
-  [3].vaultApr
+  'collateralRewards.{symbol == "USDC"}.vaultApr'
 }`
 
 const requestQuery = {
