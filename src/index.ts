@@ -19,6 +19,7 @@ import { etherfi } from './sources/etherfi';
 import { stakewise } from './sources/stakewise';
 import { svEth } from './sources/savvy';
 import { mapleSyrup } from './sources/maple-syrup';
+import { stakewisegno } from './sources/stakewisegno';
 
 export interface Env {
   YIELD_TOKENS: KVNamespace;
@@ -90,6 +91,7 @@ const tokens = [
   { name: 'stakewise', fetchFn: stakewise },
   { name: 'svEth', fetchFn: svEth },
   { name: 'mapleSyrup', fetchFn: mapleSyrup },
+  { name: 'stakewisegno', fetchFn: stakewisegno },
   // { name: 'euler',     fetchFn: euler },
 ]
 
