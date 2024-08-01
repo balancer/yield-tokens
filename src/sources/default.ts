@@ -1,15 +1,24 @@
-export const defaultFetch = async (options: { tokens: string[]; url: string; path: string; scale?: number }) => {
+import { appFetch } from '../fetch'
+
+export const defaultFetch = async (options: {
+  tokens: string[]
+  url: string
+  path: string
+  scale?: number
+}) => {
   const { tokens, url, path, scale = 100 } = options
-  const request = new Request(url, { headers: { 'User-Agent': 'cf' } })
-  const response = await fetch(request)
+  const response = await appFetch(url, { headers: { 'User-Agent': 'cf' } })
   const json = await response.json()
-  const value = (path === '') ? json : getValueFromPath(json, path)
+  const value = path === '' ? json : getValueFromPath(json, path)
   const scaledValue = Math.round(parseFloat(value) * scale)
 
-  return tokens.reduce((acc, token) => {
-    acc[token] = scaledValue
-    return acc
-  }, {} as { [key: string]: number })
+  return tokens.reduce(
+    (acc, token) => {
+      acc[token] = scaledValue
+      return acc
+    },
+    {} as { [key: string]: number },
+  )
 }
 
 // Get a specific value from a JSON object based on a path
