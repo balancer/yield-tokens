@@ -1,5 +1,3 @@
-import { appFetch } from '../fetch'
-
 export const defaultFetch = async (options: {
   tokens: string[]
   url: string
@@ -7,7 +5,7 @@ export const defaultFetch = async (options: {
   scale?: number
 }) => {
   const { tokens, url, path, scale = 100 } = options
-  const response = await appFetch(url, { headers: { 'User-Agent': 'cf' } })
+  const response = await fetch(url, { headers: { 'User-Agent': 'cf' } })
   const json = await response.json()
   const value = path === '' ? json : getValueFromPath(json, path)
   const scaledValue = Math.round(parseFloat(value) * scale)

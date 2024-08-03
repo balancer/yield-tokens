@@ -152,8 +152,21 @@ export default {
 
 // Fetch APRs for all tokens and store them in KV
 const fetchAndStoreAll = async (subgraphApiKey: string, store: KVNamespace) => {
+  const tokensPerBatch = 20
+  const totalTokens = tokens.length
+  const now = Math.floor(Date.now() / 1000) // current timestamp in seconds
+  const interval = 600 // 10 minutes in seconds
+
+  // Calculate the number of 10-minute intervals since a fixed reference point (e.g., epoch time)
+  const intervalsSinceEpoch = Math.floor(now / interval)
+  const batchNumber = intervalsSinceEpoch % Math.ceil(totalTokens / tokensPerBatch)
+  const offset = batchNumber * tokensPerBatch
+
+  // Select the current batch of tokens
+  const currentBatch = tokens.slice(offset, offset + tokensPerBatch)
+
   const responses = await Promise.allSettled(
-    tokens.map(({ fetchFn }) => fetchFn(subgraphApiKey))
+    currentBatch.map(({ fetchFn }) => fetchFn(subgraphApiKey))
   )
   const aprs = responses
     .filter((r): r is PromiseFulfilledResult<any> => r.status === 'fulfilled')

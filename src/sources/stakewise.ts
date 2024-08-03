@@ -1,5 +1,3 @@
-import { appFetch } from '../fetch'
-
 const urls = {
   mainnet:
     'https://mainnet-graph.stakewise.io/subgraphs/name/stakewise/stakewise',
@@ -30,7 +28,7 @@ interface Response {
 export const stakewise = async () => {
   const aprs: Record<string, number> = {}
   for (const network in urls) {
-    const response = await appFetch(urls[network as keyof typeof urls], {
+    const response = await fetch(urls[network as keyof typeof urls], {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

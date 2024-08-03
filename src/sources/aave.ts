@@ -3,8 +3,6 @@
 // or directly from RPC:
 // wrappedAaveToken.LENDING_POOL.getReserveCurrentLiquidityRate(mainTokenAddress)
 
-import { appFetch } from '../fetch'
-
 const tokens = {
   v2: {
     [1]: [
@@ -456,7 +454,7 @@ export const aave = async (
       throw 'no endpoint found'
     }
 
-    const response = await appFetch(
+    const response = await fetch(
       endpoint.replace('{API_KEY}', subgraphApiKey),
       {
         method: 'POST',
