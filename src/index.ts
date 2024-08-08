@@ -69,7 +69,7 @@ const tokens = [
   { name: 'ethX',    fetchFn: () => defaultFetch({ tokens: ['0xa35b1b31ce002fbf2058d22f30f95d405200a15b', '0xed65c5085a18fa160af0313e60dcc7905e944dc7'], url: 'https://universe.staderlabs.com/eth/apy', path: 'value', scale: 100 }) },
   { name: 'saETH',    fetchFn: () => defaultFetch({ tokens: ['0xf1617882a71467534d14eee865922de1395c9e89'], url: 'https://api.aspidanet.com/page_data/?chainId=1', path: 'apr', scale: 100 }) },
   { name: 'ggAVAX',  fetchFn: () => defaultFetch({ tokens: ['0xa25eaf2906fa1a3a13edac9b9657108af7b703e3'], url: 'https://api.gogopool.com/metrics/apy', path: 'total_apy_after_fees', scale: 100 }) },
-  { name: 'usdm',    fetchFn: () => defaultFetch({ tokens: ['0x57f5e098cad7a3d1eed53991d4d66c45c9af7812'], url: 'https://apy.prod.mountainprotocol.com', path: 'value', scale: 10000 }) },
+  { name: 'usdm',    fetchFn: () => defaultFetch({ tokens: ['0x57f5e098cad7a3d1eed53991d4d66c45c9af7812', '0x57f5e098cad7a3d1eed53991d4d66c45c9af7812'], url: 'https://apy.prod.mountainprotocol.com', path: 'value', scale: 10000 }) },
   // { name: 'overnightDAIPlus', fetchFn: () => defaultFetch({ tokens: ['0x0b8f31480249cc717081928b8af733f45f6915bb'], url: 'https://api.overnight.fi/optimism/dai+/fin-data/avg-apr/week', path: 'value' }) },
   // { name: 'overnightUSDPlus', fetchFn: () => defaultFetch({ tokens: ['0xa348700745d249c3b49d2c2acac9a5ae8155f826'], url: 'https://api.overnight.fi/optimism/usd+/fin-data/avg-apr/week', path: 'value' }) },
   { name: 'plsRDNT', fetchFn: () => defaultFetch({ tokens: ['0x6dbf2155b0636cb3fd5359fccefb8a2c02b6cb51'], url: 'https://plutusdao.io/api/getPlsRdntInfo', path: 'apr', scale: 10000 }) },
